@@ -1,0 +1,13 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+<article style="padding: 20px;">
+    <h2>{{article.title}}</h2>
+    <div class="metadata">Ecrit le {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('H:i')}} dans la catéforie Politique</div>
+    <div class="content">
+        <img src="http://placehold.it/350x150" alt="">
+        <p>{{ article.content  }}</p>
+        <a href="{{path('blog_edit',{'id':article.id})}}" style="background-color:aqua">Edit</button>
+    </div>
+</article>
+{%endblock %}
